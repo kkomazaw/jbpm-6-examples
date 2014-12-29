@@ -55,6 +55,8 @@ public class TaskServlet extends HttpServlet {
             req.setAttribute("taskList", taskList);
             ServletContext context = this.getServletContext();
             RequestDispatcher dispatcher = context.getRequestDispatcher("/task.jsp");
+            res.setHeader("Pragma", "no-cache");
+            res.setHeader("Cache-Control","no-cache");
             dispatcher.forward(req, res);
 
         } else if (cmd.equals("approve")) {
@@ -74,6 +76,8 @@ public class TaskServlet extends HttpServlet {
             req.setAttribute("message", message);
             ServletContext context = this.getServletContext();
             RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
+            res.setHeader("Pragma", "no-cache");
+            res.setHeader("Cache-Control","no-cache");
             dispatcher.forward(req, res);
 
         }

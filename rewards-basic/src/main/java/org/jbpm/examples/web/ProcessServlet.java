@@ -54,6 +54,8 @@ public class ProcessServlet extends HttpServlet {
         ServletContext context = this.getServletContext();
         RequestDispatcher dispatcher = context
                 .getRequestDispatcher("/index.jsp");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Cache-Control","no-cache");
         dispatcher.forward(req, res);
     }
 }
