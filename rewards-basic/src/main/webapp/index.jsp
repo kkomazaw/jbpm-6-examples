@@ -3,12 +3,12 @@
 <title>Rewards Basic example</title>
 </head>
 <body>
-<p>Rewards Basic example</p>
+<p>Rewards Basic サンプル</p>
 <p><%= request.getAttribute("message") == null ? "" : request.getAttribute("message") %></p>
 <ul>
-<li><a href="startProcess.jsp">Start Reward Process</a></li>
-<li><a href="task?user=jiri&cmd=list">Jiri's Task</a></li>
-<li><a href="task?user=mary&cmd=list">Mary's Task</a></li>
+<li><a href="startProcess.jsp">評価プロセスを開始</a></li>
+<li><a href="task?user=jiri&cmd=list">Jiriさんのタスク</a></li>
+<li><a href="task?user=mary&cmd=list">Maryさんのタスク</a></li>
 </ul>
 </body>
 </html>

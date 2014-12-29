@@ -7,20 +7,20 @@
 </head>
 <body>
 <% String user = request.getParameter("user"); %>
-<p><%= user %>'s Task</p>
+<p><%= user %>さんのタスク</p>
 <table border="1">
 <tr>
-<th>Task Name</th>
-<th>Task Id</th>
-<th>ProcessInstance Id</th>
-<th>Action</th>
+<th>タスク名</th>
+<th>タスクID</th>
+<th>プロセスインスタンスID</th>
+<th>操作</th>
 </tr>
 <% for (TaskSummary task : (List<TaskSummary>)request.getAttribute("taskList")) { %>
 <tr>
 <td><%= task.getName() %></td>
 <td><%= task.getId() %></td>
 <td><%= task.getProcessInstanceId() %></td>
-<td><a href="task?user=<%= user %>&taskId=<%= task.getId() %>&cmd=approve">Approve</a></td>
+<td><a href="task?user=<%= user %>&taskId=<%= task.getId() %>&cmd=approve">承認</a></td>
 </tr>
 <% } %>
 </table>

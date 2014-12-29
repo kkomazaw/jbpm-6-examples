@@ -63,10 +63,10 @@ public class TaskServlet extends HttpServlet {
             long taskId = Long.parseLong(req.getParameter("taskId"));
             try {
                 taskService.approveTask(user, taskId);
-                message = "Task (id = " + taskId + ") has been completed by " + user;
+                message = "タスク (id = " + taskId + ") が " + user + " により完了されました。" ;
             } catch (ProcessOperationException e) {
                 // Recoverable exception
-                message = "Task operation failed. Please retry : " + e.getMessage();
+                message = "タスク操作が失敗しました。 " + e.getMessage();
             } catch (Exception e) {
                 // Unexpected exception
                 throw new ServletException(e);

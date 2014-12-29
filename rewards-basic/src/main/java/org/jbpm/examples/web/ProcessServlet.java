@@ -48,8 +48,8 @@ public class ProcessServlet extends HttpServlet {
             throw new ServletException(e);
         }
 
-        req.setAttribute("message", "process instance (id = "
-                + processInstanceId + ") has been started.");
+        req.setAttribute("message", "プロセスインスタンス (id = "
+                + processInstanceId + ") が開始されました。");
 
         ServletContext context = this.getServletContext();
         RequestDispatcher dispatcher = context
