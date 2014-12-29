@@ -1,8 +1,10 @@
 <%@ page import="org.kie.api.task.model.TaskSummary" %>
 <%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Task management</title>
 </head>
 <body>
