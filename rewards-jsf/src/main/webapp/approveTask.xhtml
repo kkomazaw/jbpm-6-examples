@@ -14,23 +14,23 @@
 
     <ui:define name="content">
         <h:form>
-            <h:outputText value="Approve task" />
+            <h:outputText value="タスクの承認" />
               <h:panelGrid columns="2">
-                  <h:panelGroup>Task Id</h:panelGroup>
+                  <h:panelGroup>タスクID</h:panelGroup>
                   <h:panelGroup>#{taskController.task.id}</h:panelGroup>
-                  <h:panelGroup>Created by</h:panelGroup>
+                  <h:panelGroup>作成者</h:panelGroup>
                   <h:panelGroup>#{taskController.task.taskData.createdBy.id}</h:panelGroup>
-                  <h:panelGroup>Task Status</h:panelGroup>
+                  <h:panelGroup>ステータス</h:panelGroup>
                   <h:panelGroup>#{taskController.task.taskData.status}</h:panelGroup>
-                  <h:panelGroup>Recipient</h:panelGroup>
+                  <h:panelGroup>評価対象者</h:panelGroup>
                   <h:panelGroup>#{taskController.content.get("in_recipient")}</h:panelGroup>
-                  <h:panelGroup>Reward</h:panelGroup>
+                  <h:panelGroup>評価点</h:panelGroup>
                   <h:panelGroup>#{taskController.content.get("in_reward")}</h:panelGroup>
-                  <h:panelGroup><h:outputLabel value="Comment" for="commentId"/></h:panelGroup>
+                  <h:panelGroup><h:outputLabel value="コメント" for="commentId"/></h:panelGroup>
                   <h:panelGroup><h:inputText id="commentId" value="#{taskController.comment}"/>
                   </h:panelGroup>
               </h:panelGrid>
-            <h:commandButton action="#{taskController.approveTask}" value="Approve" />
+            <h:commandButton action="#{taskController.approveTask}" value="承認" />
         </h:form>
     </ui:define>
 </ui:composition>

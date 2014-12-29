@@ -60,10 +60,10 @@ public class ProcessController {
         String message;
         try {
             long processInstanceId = processBean.startProcess(recipient, reward);
-            message = "Process instance " + processInstanceId + " has been successfully started." ;
+            message = "プロセスインスタンス " + processInstanceId + " が正常に開始されました。" ;
             logger.info(message);
         } catch (Exception e) {
-            message = "Unable to start the business process.";
+            message = "ビジネスプロセスを開始できません。";
             logger.log(Level.SEVERE, message, e);
         }
         facesContext.getExternalContext().getFlash()

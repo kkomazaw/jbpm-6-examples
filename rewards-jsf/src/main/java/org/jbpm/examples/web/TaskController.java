@@ -100,10 +100,10 @@ public class TaskController {
         String message;
         try {
             tasks = taskBean.retrieveTaskList(user);
-            message = "Retrieved " + tasks.size() + " task(s) for user " + user + ".";
+            message = "ユーザー " + user + " のタスクを " + tasks.size() + " 件取得しました。";
             logger.info(message);
         } catch (Exception e) {
-            message = "Cannot retrieve task list for user " + user + ".";
+            message = "ユーザー " + user + " のタスクを取得できませんでした。";
             logger.log(Level.SEVERE, message, e);
             facesContext.getExternalContext().getFlash()
                     .put("msg", message);
@@ -115,10 +115,10 @@ public class TaskController {
         try {
             task = taskBean.getTask(taskId);
             content = taskBean.getContent();
-            message = "Loaded task " + taskId + ".";
+            message = "タスク " + taskId + " をロードしました。";
             logger.info(message);
         } catch (Exception e) {
-            message = "Unable to query for task with id = " + taskId;
+            message = "タスク " + taskId + " を検索できませんでした。";
             logger.log(Level.SEVERE, message, e);
             facesContext.getExternalContext().getFlash()
                     .put("msg", message);
@@ -131,10 +131,10 @@ public class TaskController {
             Map<String,Object> result = new HashMap<String,Object>();
             result.put("out_comment", comment);
             taskBean.approveTask(user, taskId, result);
-            message = "The task " + taskId + " has been successfully approved.";
+            message = "タスク " + taskId + " が正常に承認されました。";
             logger.info(message);
         } catch (Exception e) {
-            message = "Unable to approve the task " + taskId + ".";
+            message = "タスク " + taskId + " を承認する事はできませんでした。";
             logger.log(Level.SEVERE, message, e);
         }
         facesContext.getExternalContext().getFlash()

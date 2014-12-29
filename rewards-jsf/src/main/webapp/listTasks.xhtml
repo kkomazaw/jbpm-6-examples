@@ -13,7 +13,7 @@
 
     <ui:define name="content">
         <h:panelGroup rendered="#{empty taskController.tasks}">
-            <i>User #{taskController.user} has no pending tasks.</i>
+            <i>ユーザー #{taskController.user} はタスクがありません。</i>
         </h:panelGroup>
         <h:dataTable id="userTasksTable" border="1" rendered="#{not empty taskController.tasks}"
                      value="#{taskController.tasks}" var="_item">
@@ -25,7 +25,7 @@
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Name" />
+                    <h:outputText value="名前" />
                 </f:facet>
                 <h:outputText id="taskName" value="#{_item.name}" />
             </h:column>
@@ -37,12 +37,12 @@
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Approval" />
+                    <h:outputText value="承認" />
                 </f:facet>
                 <h:link outcome="/approveTask">
                     <f:param name="taskId" value="#{_item.id}" />
                     <f:param name="user" value="#{taskController.user}" />
-                    <h:outputText id="approve" value="Approve" />
+                    <h:outputText id="approve" value="承認" />
                 </h:link>
             </h:column>
         </h:dataTable>

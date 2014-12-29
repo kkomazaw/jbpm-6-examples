@@ -9,15 +9,15 @@
     <ui:define name="content">
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="Select a recipient" for="recipient" />
+                <h:outputLabel value="評価対象者 " for="recipient" />
                 <h:selectOneMenu id="recipient" value="#{processController.recipient}">
                     <f:selectItem itemValue="tom"/>
                     <f:selectItem itemValue="jerry"/>
                 </h:selectOneMenu>
-                <h:outputLabel value="Reward amount" for="reward" />
+                <h:outputLabel value="評価点 " for="reward" />
                 <h:inputText id="reward" value="#{processController.reward}" />
                 <h:outputLabel />
-                <h:commandButton action="#{processController.startProcess}" value="Submit" />
+                <h:commandButton action="#{processController.startProcess}" value="提出" />
             </h:panelGrid>
         </h:form>
     </ui:define>

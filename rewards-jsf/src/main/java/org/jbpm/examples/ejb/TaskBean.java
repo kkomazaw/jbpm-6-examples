@@ -68,7 +68,7 @@ public class TaskBean {
             Throwable cause = e.getCause();
             if (cause != null && cause instanceof OptimisticLockException) {
                 // Concurrent access to the same process instance
-                throw new ProcessOperationException("The same process instance has likely been accessed concurrently",
+                throw new ProcessOperationException("同じプロセスインスタンスを同時にアクセスした可能性があります。",
                         e);
             }
             throw new RuntimeException(e);
@@ -78,8 +78,8 @@ public class TaskBean {
                 ut.rollback();
             }
             // Probably the task has already been started by other users
-            throw new ProcessOperationException("The task (id = " + taskId
-                    + ") has likely been started by other users ", e);
+            throw new ProcessOperationException("タスク (id = " + taskId
+                    + ") が他のユーザーから開始された可能性があります。", e);
         } catch (Exception e) {
             // Transaction might be already rolled back by TaskServiceSession
             if (ut.getStatus() == Status.STATUS_ACTIVE) {
@@ -98,7 +98,7 @@ public class TaskBean {
             ut.commit();
         } catch (Exception e) {
             ut.rollback();
-            throw new ProcessOperationException("Cannot get task " + taskId, e);
+            throw new ProcessOperationException("タスク " + taskId + " を取得できませんでした。", e);
         }
         return task;
     }
