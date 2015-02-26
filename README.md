@@ -1,5 +1,5 @@
 jbpm-6-examples
 ===============
 
-Web examples for jBPM 6. Distributed under Apache Software License 2.0.
+jBPM 6 のWebアプリサンプルです。Apache Software License 2.0 により配布されています。
 
